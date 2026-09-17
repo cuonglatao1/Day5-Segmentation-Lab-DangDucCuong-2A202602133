@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp -r c:/Users/DELL/Day5-Segmentation-Lab-DangDucCuong-2A202602133/tiers/easy_semantic/groundtruth c:/Users/DELL/Day5-Segmentation-Lab-DangDucCuong-2A202602133/data/tiers/easy_semantic/)",
+      "Bash(cp -r c:/Users/DELL/Day5-Segmentation-Lab-DangDucCuong-2A202602133/tiers/medium_instance/groundtruth c:/Users/DELL/Day5-Segmentation-Lab-DangDucCuong-2A202602133/data/tiers/medium_instance/)",
+      "Bash(cp -r c:/Users/DELL/Day5-Segmentation-Lab-DangDucCuong-2A202602133/tiers/hard_panoptic/groundtruth c:/Users/DELL/Day5-Segmentation-Lab-DangDucCuong-2A202602133/data/tiers/hard_panoptic/)",
+      "Bash(unzip -o tiers_gt.zip)",
+      "Bash(python scoring/scorecard.py --dir submissions --out reports --group tiers)",
+      "Bash(pip install -r requirements.txt)",
+      "Bash(python scoring/score.py --task easy_semantic --submission submissions/easy_semantic.zip)",
+      "Bash(python scoring/score.py --task medium_instance --submission submissions/medium_instance.zip)",
+      "Bash(python scoring/score.py --task hard_panoptic --submission submissions/hard_panoptic.zip)",
+      "Bash(python scoring/score.py easy_semantic submissions/easy_semantic.zip --json reports/easy_detail.json)",
+      "Bash(python scoring/score.py medium_instance submissions/medium_instance.zip --json reports/medium_detail.json)",
+      "Bash(python scoring/score.py hard_panoptic submissions/hard_panoptic.zip --json reports/hard_detail.json)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
